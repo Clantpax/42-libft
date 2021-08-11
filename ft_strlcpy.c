@@ -14,19 +14,18 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t		i;
-	char		*a;
-	const char	*b;
+	size_t	i;
 
 	i = 0;
-	a = dest;
-	b = src;
-	while (i < size)
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < size - 1)
 	{
-		a[i] = b[i];
+		dest[i] = src[i];
 		i++;
 	}
-	return (i - 1);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
 /*
 int main(void)
@@ -34,7 +33,7 @@ int main(void)
 	char str1[] = "blue";
 	char str2[] = "black";
 
-	printf("%ld\n",ft_strlcpy(str1, str2, sizeof(str2)));
+	printf("%ld\n",ft_strlcpy(str1, str2, 5));
 	printf("%s\n",str1);
 	return (0);
 }

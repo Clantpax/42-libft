@@ -12,30 +12,59 @@
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	while (*(s + i) != '\0')
+	{
+		while (*(s + i) == c)
+			i++;
+		if (*(s + i) != c && *(s + i) != '\0')
+			count += 1;
+		while (*(s + i) != c && *(s + i) != '\0')
+			i++;
+	}
+	return (count);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	size_t	i;
 	size_t	j;
+	size_t	k;
+	size_t	count;
 
 	i = 0;
-	j = 0;
-	if (*(s + i) == c)
-		i++;
-	
+	k = 0;
+	count = ft_count(s, c);
+	str = malloc(sizeof(s) * (count + 1));
+	while (*(s + i) != '\0' && k < count)
+	{
+		j = 0;
+		while (*(s + i) == c)
+			i++;
+		while (*(s + i + j) != c && *(s + i + j) != '\0')
+			j++;
+		str[k] = malloc(sizeof(*s) * (j + 1));
+		ft_strlcpy(str[k], s + i, j);
+		i += j + 1;
+		k++;
+	}
+	str[k] = '\0';
+	return (str);
 }
-
+/*
 int main()
 {
-    char **tab = ft_split("unoo dos tre  42o",'o');
-    size_t i = 0;
-    while (i < ft_getcount("unoo dos tre  42o",'o'))
-    {
-        printf("%s\n", tab[i]);
-        i++;
-    }
+    char **res = ft_split(".12.34.", '.');
+    int i = 0;
+    while (res[i])
+        printf("%s\n", res[i++]);
+    return (0);
 }
-
-if 'o' = a[0], delete a[0]
-if 'o' = a[i], return '\n'
-if 'o' = a[i] = a[i + 1], return a[i]
+*/

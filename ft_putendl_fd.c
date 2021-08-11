@@ -12,26 +12,13 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*d;
-	char	*s;
+	int	i;
 
-	d = (char *)dest;
-	s = (char *)src;
-	if (s < d)
-		while (len--)
-			d[len] = s[len];
-	else
-		ft_memcpy(d, s, len);
-	return (dest);
+	i = 0;
+	while (*(s + i) != '\0')
+		write(fd, s + i++, 1);
+	write(fd, '\0', 1);
+	write(fd, "\n", 1);
 }
-/*
-int main(void)
-{
-	char str[100] = "12345";
-
-	memmove(str, str + 2, 3);
-    printf("%s\n", str);
-}
-*/
