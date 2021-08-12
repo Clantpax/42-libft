@@ -18,23 +18,22 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = ft_strlen(s);
 	if (*(s + i) == c)
-		return ((char *)s + i);
+		return ((unsigned char *)s + i);
 	i--;
-	while (*(s + i) != 0)
+	while (*(s + i) != 0 && i != -1)
 	{
 		if (*(s + i) == c)
-			return ((char *)s + i);
+			return ((unsigned char *)s + i);
 		i--;
 	}
 	return (0);
 }
-/*
+
 int main(void)
 {
-    const char a[9] = "swegway";
-    char c = 'w';
-    printf("%s\n",ft_strrchr(a,c));
-    printf("%s\n",strrchr(a,c));
+    const char *str2 = "bonjour";
+    //char c = 'w';
+    printf("%s\n",ft_strrchr(str2 + 6, 'u'));
+    printf("%s\n",strrchr(str2+6, 'u'));
     return 0;
 }
-*/
