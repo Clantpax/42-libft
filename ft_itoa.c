@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 	i = n;
 	count = 0;
 	if (n == 0)
-		return ("0"); 
+		return ("0");
 	while (i != 0 && count++ > -1)
 		i /= 10;
 	a = (char *)malloc(sizeof(char) * count + 1);
@@ -38,9 +38,10 @@ char	*ft_itoa(int n)
 	}
 	return (a);
 }
-
+/*
 int main(void)
 {
 	int a = 0;
 	printf("%s",ft_itoa(a));
 }
+*/

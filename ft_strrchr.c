@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 int main(void)
 {
     const char *str2 = "bonjour";
@@ -37,3 +37,4 @@ int main(void)
     printf("%s\n",strrchr(str2+6, 'u'));
     return 0;
 }
+*/

@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ft_substr(s1, j, k - j + 1));
 }
-
+/*
 int main()
 {
     char s1[500] = "bring";
@@ -44,3 +44,4 @@ int main()
 
     printf("%s\n", ft_strtrim(s1, set));
 }
+*/
