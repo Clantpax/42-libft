@@ -21,7 +21,6 @@ void	*ft_memchr(const void *ptr, int value, size_t num)
 	{
 		if (*((unsigned char *)ptr + i) == (unsigned char)value)
 		{
-			*((unsigned char *)ptr + i + 1) = '\0';
 			return ((void *)ptr + i);
 		}
 		i++;
@@ -31,8 +30,8 @@ void	*ft_memchr(const void *ptr, int value, size_t num)
 /*
 int main(void)
 {
-	char a[] = "qwerty";
-	char c = 'e';
-	printf("%s\n",(char *)ft_memchr(a,c,3));
+	//char a[] = "qwerty";
+	//char c = 'e';
+	printf("%s\n",(char *)ft_memchr("bonjour", 'b', 4));
 }
 */

@@ -23,11 +23,8 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
+		if (nptr[i++] == '-')
 			j = 1;
-		i++;
-	}
 	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		a = nptr[i] - 48 + a * 10;
@@ -35,12 +32,12 @@ int	ft_atoi(const char *nptr)
 	}
 	if (j == 1)
 		return (-a);
-	return (0);
+	return (a);
 }
 /*
 int main(void)
 {
-	char a[] = "   we";
+	char a[] = "   0we";
 
 	printf("%d\n",ft_atoi(a));
 }

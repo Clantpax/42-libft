@@ -38,6 +38,9 @@ SRC = ft_isalpha.c	\
 CC = gcc
 CF = -Wall -Wextra -Werror
 
+default:
+	$(CC) -o $(CF) *.c
+
 all: $(NAME)
 
 $(NAME): $(OBJ)

@@ -34,12 +34,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i = ft_strlen(set);
 		}
 	}
+	if (j == strlen(s1))
+		return ((char *)s1 + j);
 	return (ft_substr(s1, j, k - j + 1));
 }
 /*
 int main()
 {
-    char s1[500] = "bring";
+    char s1[500] = "bong";
     char set[500] = "bong";
 
     printf("%s\n", ft_strtrim(s1, set));

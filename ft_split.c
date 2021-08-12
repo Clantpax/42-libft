@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 			j++;
 		str[k] = malloc(sizeof(*s) * (j + 1));
 		ft_strlcpy(str[k], s + i, j);
-		i += j + 1;
+		i == i + j + 1;
 		k++;
 	}
 	str[k] = 0;
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 /*
 int main()
 {
-    char **res = ft_split(".12.34.", '.');
+    char **res = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
     int i = 0;
     while (res[i])
         printf("%s\n", res[i++]);
