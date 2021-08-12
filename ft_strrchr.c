@@ -17,13 +17,13 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = ft_strlen(s);
-	if (*(s + i) == c)
-		return ((unsigned char *)s + i);
+	if (*(s + i) == (unsigned char)c)
+		return ((char *)s + i);
 	i--;
 	while (*(s + i) != 0 && i != -1)
 	{
-		if (*(s + i) == c)
-			return ((unsigned char *)s + i);
+		if (*(s + i) == (unsigned char)c)
+			return ((char *)s + i);
 		i--;
 	}
 	return (0);
@@ -31,10 +31,10 @@ char	*ft_strrchr(const char *s, int c)
 /*
 int main(void)
 {
-    const char *str2 = "bonjour";
-    //char c = 'w';
-    printf("%s\n",ft_strrchr(str2 + 6, 'u'));
-    printf("%s\n",strrchr(str2+6, 'u'));
+    const char *str2 = "swegway";
+    char c = 'w';
+    printf("%s\n",ft_strrchr(str2, c));
+    printf("%s\n",strrchr(str2, c));
     return 0;
 }
 */

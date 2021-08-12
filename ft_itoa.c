@@ -20,14 +20,14 @@ char	*ft_itoa(int n)
 
 	i = n;
 	count = 0;
-	if (n == 0)
-		return ("0");
+	if (i == 0)
+		count++;
 	while (i != 0 && count++ > -1)
 		i /= 10;
-	a = (char *)malloc(sizeof(char) * count + 1);
+	a = (char *)malloc(sizeof(char) * (count + 1));
 	if (n < 0)
 	{
-		a = (char *)malloc(sizeof(char) * ++count + 1);
+		a = (char *)malloc(sizeof(char) * (++count + 1));
 		a[i++] = '-';
 	}
 	a[count] = 0;
