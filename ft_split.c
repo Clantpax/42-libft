@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 		i += j + 1;
 		k++;
 	}
-	str[k] = '\0';
+	str[k] = 0;
 	return (str);
 }
 /*

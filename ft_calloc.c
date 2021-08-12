@@ -19,6 +19,7 @@ void	*ft_calloc(size_t element, size_t size)
 	size_t	j;
 
 	i = element * size;
+	j = 0;
 	a = (char *)malloc(i);
 	while (j < i)
 	{

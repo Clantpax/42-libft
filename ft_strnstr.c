@@ -23,18 +23,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 		while (little[j] == big[i + j])
 			j++;
+		if (i + j > len)
+			break ;
 		if (little[j] == 0)
 			return ((char *)&big[i]);
 		i++;
 	}
 	return (0);
 }
-/*
+
 int    main()
 {
     char big[] = "daphmepham";
-    char small[] = "pha";
-    printf("%s\n", ft_strnstr(big, small, 6));
+    char small[] = "phm";
+    printf("%s\n", ft_strnstr(big, small, 5));
     return (0);
 }
-*/

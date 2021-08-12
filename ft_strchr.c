@@ -17,23 +17,23 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	if (c == 0)
-		return ("\0");
 	while (*(s + i) != 0)
 	{
 		if (*(s + i) == c)
 			return ((char *)s + i);
 		i++;
 	}
-	return ('\0');
+	if (*(s + i) == c)
+		return ((char *)s + i);
+	return (0);
 }
 /*
 int main(void)
 {
 	char a[999] = "swegway";
-	char c = 'w';
-	printf("%s\n",ft_strchr(a,c));
-	printf("%s\n",strchr(a,c));
+	char c = '\0';
+	printf("%p\n",ft_strchr(a,c));
+	printf("%p\n",strchr(a,c));
 	return 0;
 }
 */
