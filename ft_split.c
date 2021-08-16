@@ -37,13 +37,15 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	size_t	count;
 
+	if (!s || !c)
+		return (0);
 	i = 0;
 	k = 0;
-	count = ft_count(s, c);
-	str = malloc(sizeof(s) * (count + 1));
-	while (*(s + i) != '\0' && k < count)
+	str = malloc(sizeof(s) * (ft_count(s, c) + 1));
+	if (!str)
+		return (0);
+	while (*(s + i) != '\0' && k < ft_count(s, c))
 	{
 		j = 0;
 		while (*(s + i) == c)
@@ -51,14 +53,13 @@ char	**ft_split(char const *s, char c)
 		while (*(s + i + j) != c && *(s + i + j) != '\0')
 			j++;
 		str[k] = malloc(sizeof(*s) * (j + 1));
-		ft_strlcpy(str[k], s + i, j + 1);
+		ft_strlcpy(str[k++], s + i, j + 1);
 		i = i + j + 1;
-		k++;
 	}
 	str[k] = 0;
 	return (str);
 }
-/*
+/* 
 int main()
 {
     char **res = ft_split(".12.34.", '.');
@@ -67,4 +68,4 @@ int main()
         printf("%s\n", res[i++]);
     return (0);
 }
-*/
+ */
