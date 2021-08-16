@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	a = dest;
 	b = src;
 	if (!src)
-		return (0);
+		return (ft_strdup(""));
 	while (i < n)
 	{
 		a[i] = b[i];
