@@ -19,17 +19,16 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	j;
 	size_t	k;
 
-	k = 0;
+	k = -1;
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (0);
 	a = (char *)malloc(sizeof(char) * (i + j) + 1);
 	if (!a)
 		return (0);
-	while (k < i)
-	{
+	while (k++ < i - 1)
 		a[k] = s1[k];
-		k++;
-	}
 	k = 0;
 	while (k < i + j)
 	{
