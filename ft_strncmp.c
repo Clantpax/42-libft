@@ -19,7 +19,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t count)
 
 	a = (unsigned char *)str1;
 	b = (unsigned char *)str2;
-	while (count-- )
+	while (count--)
 	{
 		if (*a != *b || *a == 0 || *b == 0)
 			return (*a - *b);
