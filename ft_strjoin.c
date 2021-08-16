@@ -23,6 +23,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	a = (char *)malloc(sizeof(char) * (i + j) + 1);
+	if (!a)
+		return (0);
 	while (k < i)
 	{
 		a[k] = s1[k];
