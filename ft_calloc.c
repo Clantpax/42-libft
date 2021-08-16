@@ -21,6 +21,8 @@ void	*ft_calloc(size_t element, size_t size)
 	i = element * size;
 	j = 0;
 	a = (char *)malloc(i);
+	if (!a)
+		return (0);
 	while (j < i)
 	{
 		a[j] = 0;

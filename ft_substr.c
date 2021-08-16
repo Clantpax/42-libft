@@ -34,6 +34,6 @@ int main()
 {
     char *a = "qwerty";
 
-    printf("%s\n", ft_substr(a, 0, 2));
+    printf("%s\n", ft_substr(a, 0, 0));
 }
 */

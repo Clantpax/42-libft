@@ -19,9 +19,9 @@ int	ft_strncmp(const char *str1, const char *str2, size_t count)
 
 	a = (unsigned char *)str1;
 	b = (unsigned char *)str2;
-	while (count--)
+	while (count-- )
 	{
-		if (*a != *b)
+		if (*a != *b || *a == 0 || *b == 0)
 			return (*a - *b);
 		a++;
 		b++;
@@ -31,8 +31,8 @@ int	ft_strncmp(const char *str1, const char *str2, size_t count)
 /*
 int main(void)
 {
-	const char a[9] = "qwert0";
-	const char b[9] = "qwert";
+	const char a[9] = "qwer\0t";
+	const char b[9] = "qwerty";
 	printf("%d",ft_strncmp(a,b,6));
 	return 0;
 }

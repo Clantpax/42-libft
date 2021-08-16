@@ -14,30 +14,31 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char		*a;
-	const char	*b;
-	size_t		i;
-	size_t		j;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	j = ft_strlen(dest);
-	a = dest;
-	b = src;
+	k = ft_strlen(src);
 	i = 0;
-	while (j + i < size - 1)
-		a[j + i++] = *src++;
-	a[j + i] = 0;
+	if (size == 0)
+		return (k);
+	while (j + i < size - 1 && *src)
+		dest[j + i++] = *src++;
+	dest[j + i] = 0;
 	if (size < j)
-		return (size + ft_strlen(b));
-	return (j + ft_strlen(b));
+		return (size + k);
+	return (j + k);
 }
 /*
 int main(void)
 {
-	char a[500] = "jelly";
-	char b[500] = "bean";
 
-	printf("Mine    : %ld\n", ft_strlcat(a, b, 9));
-	printf("Mine    : %s\n", a);
+	char dest[14] = "rrrrrr";
+	//char b[500] = "bean";
+
+	printf("Mine    : %ld\n", ft_strlcat(dest, "lorem", 0));
+	printf("Mine    : %s\n", dest);
 	return (0);
 }
 */

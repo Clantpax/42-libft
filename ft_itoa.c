@@ -23,25 +23,24 @@ char	*ft_itoa(int n)
 	if (i == 0)
 		count++;
 	while (i != 0 && count++ > -1)
-		i /= 10;
+		i = i / 10;
 	a = (char *)malloc(sizeof(char) * (count + 1));
 	if (n < 0)
 	{
 		a = (char *)malloc(sizeof(char) * (++count + 1));
 		a[i++] = '-';
 	}
-	a[count] = 0;
-	while (i <= --count)
+	a[count--] = 0;
+	while (i - 1 < count)
 	{
-		a[count] = abs(n % 10) + 48;
-		n /= 10;
+		a[count--] = abs(n % 10) + '0';
+		n = n / 10;
 	}
 	return (a);
 }
-/*
+
 int main(void)
 {
-	int a = 0;
+	int a = 5;
 	printf("%s",ft_itoa(a));
 }
-*/
