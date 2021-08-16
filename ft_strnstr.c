@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!big)
+		return (0);
 	while (big[i] != 0 && i < len)
 	{
 		j = 0;
@@ -31,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-/*
+
 int    main()
 {
     char big[] = "daphmepham";
@@ -39,4 +41,3 @@ int    main()
     printf("%s\n", ft_strnstr(big, small, 5));
     return (0);
 }
-*/
