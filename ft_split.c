@@ -38,7 +38,7 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	size_t	k;
 
-	if (!s || !c)
+	if (!s)
 		return (0);
 	i = 0;
 	k = 0;
