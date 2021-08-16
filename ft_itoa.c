@@ -25,6 +25,8 @@ char	*ft_itoa(int n)
 	while (i != 0 && count++ > -1)
 		i = i / 10;
 	a = (char *)malloc(sizeof(char) * (count + 1));
+	if (!a)
+		return (0);
 	if (n < 0)
 	{
 		a = (char *)malloc(sizeof(char) * (++count + 1));
