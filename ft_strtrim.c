@@ -18,11 +18,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	size_t	k;
 
+	if (!set || !s1)
+		return (0);
 	i = ft_strlen(set);
 	j = 0;
 	k = ft_strlen(s1) - 1;
-	if (!set)
-		return (0);
 	while (i--)
 	{
 		if (s1[j] == set[i])
