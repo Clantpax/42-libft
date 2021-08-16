@@ -28,10 +28,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	a[i] = 0;
 	return (a);
 }
-
+/*
 int main()
 {
     char *a = "qwert";
 
     printf("%s\n", ft_substr(a, 10, 0));
 }
+*/
