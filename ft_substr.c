@@ -17,17 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*a;
 	unsigned int	i;
 
-	i = 0;
-	if (s[start] == 0)
+	if (start > ft_strlen(s))
 		return (0);
+	i = -1;
 	a = (char *)malloc(sizeof(char) * (len + 1));
 	if (a == 0)
 		return (0);
-	while (i < len)
-	{
+	while (++i < len)
 		a[i] = s[start + i];
-		i++;
-	}
 	a[i] = 0;
 	return (a);
 }
@@ -36,6 +33,6 @@ int main()
 {
     char *a = "qwerty";
 
-    printf("%s\n", ft_substr(a, 0, 0));
+    printf("%s\n", ft_substr(a, 0, 1));
 }
 */
