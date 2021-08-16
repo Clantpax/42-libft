@@ -35,7 +35,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	a[i + j] = 0;
 	return (a);
 }
-
+/*
 int main()
 {
     char *a = "big";
@@ -43,3 +43,4 @@ int main()
 
     printf("%s\n", ft_strjoin(a, b));
 }
+*/

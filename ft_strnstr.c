@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
+/*
 int    main()
 {
     char big[] = "daphmepham";
@@ -41,3 +41,4 @@ int    main()
     printf("%s\n", ft_strnstr(big, small, 5));
     return (0);
 }
+*/
