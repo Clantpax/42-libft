@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	if (start >= ft_strlen(s))
-		return (0);
+		return (ft_strdup(""));
 	i = -1;
 	a = (char *)malloc(sizeof(char) * (len + 1));
 	if (a == 0)
@@ -28,11 +28,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	a[i] = 0;
 	return (a);
 }
-/*
+
 int main()
 {
-    char *a = "qwerty";
+    char *a = "qwert";
 
-    printf("%s\n", ft_substr(a, 0, 1));
+    printf("%s\n", ft_substr(a, 10, 0));
 }
-*/
