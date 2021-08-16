@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	a = dest;
 	b = src;
-	if (*b == 0)
+	if (!dest && !src)
 		return (0);
 	while (i < n)
 	{
@@ -33,10 +33,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int main(void)
 {
-	//char str2[4] = "blue";  
-	char str1[50] = "black";  
-  
-	ft_memcpy (str1, str1 + 2, 3);
+	char str2[4] = "";
+	char str1[50] = "";  
+
+	ft_memcpy(str1,str2, 0);
 	printf("%s\n",str1);
 	return 0;
 }
