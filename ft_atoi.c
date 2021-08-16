@@ -24,20 +24,17 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 		if (nptr[i++] == '-')
-			j = 1;
+			j = -1;
 	while (nptr[i] >= 48 && nptr[i] <= 57)
-	{
-		a = nptr[i] - 48 + a * 10;
-		i++;
-	}
-	if (j == 1)
-		return (-a);
+		a = nptr[i++] - 48 + a * 10;
+	if (j == -1)
+		return (a * j);
 	return (a);
 }
 /*
 int main(void)
 {
-	char a[] = "   0we";
+	char a[] = "-2147483648";
 
 	printf("%d\n",ft_atoi(a));
 }
