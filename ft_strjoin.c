@@ -24,7 +24,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	k = -1;
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
-	a = (char *)malloc(sizeof(char) * (i + j) + 1);
+	a = (char *)malloc(sizeof(char) * (i + j + 1));
 	if (!a)
 		return (0);
 	while (++k < i)
@@ -39,8 +39,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 int main()
 {
     char *a = "big";
-	char *b = "clock";
+	char *b = " ";
+	char *c = "clock";
+	char *t = ft_strjoin(a, b);
 
-    printf("%s\n", ft_strjoin(a, b));
+	printf("%s\n", ft_strjoin(a, b));
+    printf("%s\n", ft_strjoin(t, c));
 }
 */
