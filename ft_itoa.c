@@ -25,10 +25,10 @@ char	*ft_itoa(int n)
 	while (i != 0 && count++ > -1)
 		i = i / 10;
 	a = (char *)malloc(sizeof(*a) * count + 1);
-	if (n < 0)
-		a[i++] = '-';
 	if (!a)
 		return (0);
+	if (n < 0)
+		a[i++] = '-';
 	a[count] = 0;
 	while (i < count--)
 	{
