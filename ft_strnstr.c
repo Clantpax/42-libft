@@ -17,10 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (len == 0)
+	if (len == 0 || !*big)
 		return (0);
-	if (!*big )
-		return (ft_strdup(""));
 	if (!*little || big == little)
 		return ((char *)big);
 	i = 0;
