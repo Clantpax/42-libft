@@ -20,30 +20,28 @@ char	*ft_itoa(int n)
 
 	i = n;
 	count = 0;
-	if (i == 0)
+	if (i <= 0)
 		count++;
 	while (i != 0 && count++ > -1)
 		i = i / 10;
-	a = (char *)malloc(sizeof(char) * (count + 1));
+	a = (char *)malloc(sizeof(*a) * count + 1);
+	if (n < 0)
+		a[i++] = '-';
 	if (!a)
 		return (0);
-	if (n < 0)
+	a[count] = 0;
+	while (i < count--)
 	{
-		a = (char *)malloc(sizeof(char) * (++count + 1));
-		a[i++] = '-';
-	}
-	a[count--] = 0;
-	while (i - 1 < count)
-	{
-		a[count--] = abs(n % 10) + '0';
+		a[count] = abs(n % 10) + '0';
 		n = n / 10;
 	}
 	return (a);
 }
-/*
+
 int main(void)
 {
-	int a = 5;
+	int a = 2147483647;
 	printf("%s",ft_itoa(a));
 }
-*/
+//try neg malloc first, pos malloc 2nd
+//test if declared a *a[i + 1] = '-'* would be reset
