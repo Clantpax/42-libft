@@ -21,15 +21,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	i = -1;
+	i = 0;
 	if (ft_strlen(s) < len)
 		a = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
 	else
-		a = (char *)malloc(sizeof(char) * (len - start + 1));
+		a = (char *)malloc(sizeof(char) * (len + 1));
 	if (a == 0)
 		return (0);
-	while (++i < len - start && i < ft_strlen(s) - start)
+	while (s[start + i] != 0 && i < len)
+	{
 		a[i] = s[start + i];
+		i++;
+	}
 	a[i] = 0;
 	return (a);
 }
@@ -38,6 +41,6 @@ int main()
 {
     char *a = "qwert";
 
-    printf("%s\n", ft_substr(a, 1, 7));
+    printf("%s\n", ft_substr(a, 1, 1));
 }
 */
