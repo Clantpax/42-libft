@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i] != '\0')
 	{
-		f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 	return ((char *)s);
