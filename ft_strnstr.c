@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] != 0 && i < len)
 	{
 		j = 0;
-		while (little[j] == big[i + j])
+		while (little[j] == big[i + j] && big[i + j] != 0)
 			j++;
 		if (i + j > len)
 			break ;
@@ -36,8 +36,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 int    main()
 {
 	char *s1 = "aaaa";
-    char *s2 = "aaaaa";
-    size_t max = 4;
+    char *s2 = "a";
+    size_t max = 5;
 
     //char *i1 = strnstr(s1, s2, max);
     char *i2 = ft_strnstr(s1, s2, max);
