@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	if (!little)
+	if (!*little || len == 0)
 		return ((char *)big);
 	i = 0;
 	while (big[i] != 0 && i < len)
@@ -35,9 +35,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int    main()
 {
-    char big[] = "daphmepham";
-    char small[] = "phm";
-    printf("%s\n", ft_strnstr(big, small, 5));
+	char *s1 = "oh no not the empty string !";
+    char *s2 = "";
+    size_t max = 0;
+
+    //char *i1 = strnstr(s1, s2, max);
+    char *i2 = ft_strnstr(s1, s2, max);
+	//printf("%s\n", i1);
+    printf("%s\n", i2);
     return (0);
 }
 */
