@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	i = -1;
 	if (ft_strlen(s) < len)
-		a = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+		a = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
 	else
 		a = (char *)malloc(sizeof(char) * (len + 1));
 	if (a == 0)
@@ -38,6 +38,6 @@ int main()
 {
     char *a = "qwert";
 
-    printf("%s\n", ft_substr(a, 10, 0));
+    printf("%s\n", ft_substr(a, 1, 7));
 }
 */
