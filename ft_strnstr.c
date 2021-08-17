@@ -19,7 +19,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (len == 0)
 		return (0);
-	if (!*little || !*big || big == little)
+	if (!*big )
+		return (ft_strdup(""));
+	if (!*little || big == little)
 		return ((char *)big);
 	i = 0;
 	while (big[i] != 0 && i < len)
