@@ -30,7 +30,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	while (++k < i)
 		a[k] = s1[k];
 	k = -1;
-	while (++k < i + j)
+	while (++k < j)
 		a[k + i] = s2[k];
 	a[i + j] = 0;
 	return (a);
