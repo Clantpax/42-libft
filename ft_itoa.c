@@ -37,11 +37,10 @@ char	*ft_itoa(int n)
 	}
 	return (a);
 }
-
+/*
 int main(void)
 {
 	int a = 2147483647;
 	printf("%s",ft_itoa(a));
 }
-//try neg malloc first, pos malloc 2nd
-//test if declared a *a[i + 1] = '-'* would be reset
+*/
