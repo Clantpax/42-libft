@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	if (!*little || len == 0)
+	if (!*little || len == 0 || big == little)
 		return ((char *)big);
 	i = 0;
 	while (big[i] != 0 && i < len)
@@ -32,12 +32,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-/*
+/* 
 int    main()
 {
-	char *s1 = "oh no not the empty string !";
-    char *s2 = "";
-    size_t max = 0;
+	char *s1 = "aaaa";
+    char *s2 = "aaaaa";
+    size_t max = 4;
 
     //char *i1 = strnstr(s1, s2, max);
     char *i2 = ft_strnstr(s1, s2, max);
@@ -45,4 +45,4 @@ int    main()
     printf("%s\n", i2);
     return (0);
 }
-*/
+ */
