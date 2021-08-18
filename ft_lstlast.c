@@ -18,10 +18,10 @@ t_list	*ft_lstlast(t_list *lst)
 	int	j;
 
 	if (!lst)
-		return (lst);
+		return (0);
 	i = 0;
-	j = ft_lstsize(lst) - 1;
-	while (i < j)
+	j = ft_lstsize(lst);
+	while (i < j - 1)
 	{
 		lst = lst->next;
 		i++;
@@ -36,7 +36,7 @@ int main()
 	t_list *lst = ft_lstnew(str);
 	t_list *lst2 = ft_lstnew(str2);
 	t_list *lst4;
-	ft_lstadd_front(&lst2, lst);
+	//ft_lstadd_front(&lst2, lst);
 	printf("%s\n", (char *)lst2->content);
 	printf("%s\n", (char *)lst2->next->content);
 	lst4 = ft_lstlast(lst2);
