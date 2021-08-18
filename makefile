@@ -60,9 +60,7 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	$(CC) $(CF) -c $(SRC)
 
-bonus: $(NAME)
-
-$(NAME): $(BONUSOBJ)
+bonus: $(BONUSOBJ)
 	ar -rcs $(NAME) $(BONUSOBJ)
 
 $(BONUSOBJ): $(BONUSSRC)
