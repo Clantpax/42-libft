@@ -64,10 +64,10 @@ bonus: $(BONUSOBJ)
 	ar -rcs $(NAME) $(BONUSOBJ)
 
 $(BONUSOBJ): $(BONUSSRC)
-	$(CC) $(CF) -c $(BONUSASRC)
+	$(CC) $(CF) -c $(BONUSSRC)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	rm -f $(NAME)
