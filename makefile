@@ -37,6 +37,18 @@ SRC = ft_isalpha.c	\
 	ft_putendl_fd.c	\
 	ft_putnbr_fd.c
 
+BONUSSRC = ft_lstnew.c		\
+	ft_lstadd_front.c	\
+	ft_lstsize.c		\
+	ft_lstlast.c		\
+	ft_lstadd_back.c	\
+	ft_lstdelone.c		\
+	ft_lstclear.c		\
+	ft_lstiter.c		\
+	ft_lstmap.c
+
+BONUSOBJ = $(BONUSSRC:.c=.o)
+
 CC = gcc
 CF = -Wall -Wextra -Werror
 
@@ -47,7 +59,15 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(SRC)
 	$(CC) $(CF) -c $(SRC)
-	
+
+bonus: $(NAME)
+
+$(NAME): $(BONUSOBJ)
+	ar -rcs $(NAME) $(BONUSOBJ)
+
+$(BONUSOBJ): $(BONUSSRC)
+	$(CC) $(CF) -c $(BONUSASRC)
+
 clean:
 	rm -f $(OBJ)
 
@@ -56,4 +76,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
