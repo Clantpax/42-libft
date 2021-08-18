@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	a = ft_lstlast(*lst);
 	a->next = new;
 }
-
+/*
 int main()
 {
 	char *str = "testr";
@@ -42,3 +42,4 @@ int main()
 	lst = lst->next;
 	printf("%s\n", (char *)lst->content);
 }
+*/
