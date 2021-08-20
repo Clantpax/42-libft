@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 /*
 int main()
 {
-    char **res = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+    char **res = ft_split("lorem", ' ');
     int i = 0;
     while (res[i])
         printf("%s\n", res[i++]);
