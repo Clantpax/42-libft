@@ -35,6 +35,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 /* 
 int main(void)
 {
-    printf("%ld\n", ft_strlcat("rrrrrrrrrrrrrrr", "lorem ipsum dolor sit amet", 5));
+    printf("%ld\n", ft_strlcat("rrrrrrrrrrrrrrr", 
+	"lorem ipsum dolor sit amet", 5));
 }
  */
