@@ -15,8 +15,10 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	size_t	j;
 
-	i = ft_strlen(s);
+	i = 0;
+	j = ft_strlen(s);
 	if (*(s + i) == (unsigned char)c)
 		return ((char *)s + i);
 	i--;
@@ -26,15 +28,15 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + i);
 		i--;
 	}
-	return (0);
+	return (ft_strdup(""));
 }
-/*
+/* 
 int main(void)
 {
     const char *str2 = "swegway";
-    char c = 'w';
+    char c = 'z';
     printf("%s\n",ft_strrchr(str2, c));
     printf("%s\n",strrchr(str2, c));
     return 0;
 }
-*/
+ */

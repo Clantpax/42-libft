@@ -33,7 +33,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 /*
 int main(void)
 {
-
 	char dest[14] = "rrrrrr";
 	//char b[500] = "bean";
 

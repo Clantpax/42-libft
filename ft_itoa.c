@@ -32,7 +32,10 @@ char	*ft_itoa(int n)
 	a[count] = 0;
 	while (i < count--)
 	{
-		a[count] = abs(n % 10) + '0';
+		if (n <= -1)
+			a[count] = (n % 10) * (-1) + '0';
+		else
+			a[count] = n % 10 + '0';
 		n = n / 10;
 	}
 	return (a);
@@ -40,7 +43,7 @@ char	*ft_itoa(int n)
 /*
 int main(void)
 {
-	int a = 2147483647;
+	int a = -2147483648;
 	printf("%s",ft_itoa(a));
 }
 */
