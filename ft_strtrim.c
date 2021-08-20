@@ -29,6 +29,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		{
 			j++;
 			i = ft_strlen(set);
+			if (j == ft_strlen(s1))
+				return (ft_strdup(""));
 		}
 		else if (s1[k] == set[i])
 		{
@@ -36,11 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i = ft_strlen(set);
 		}
 	}
-	if (j == ft_strlen(s1))
-		return (ft_strdup(""));
 	return (ft_substr(s1, j, k - j + 1));
 }
-/*
+/* 
 int main()
 {
     char s1[500] = ".......";
@@ -48,4 +48,4 @@ int main()
 
     printf("%s\n", ft_strtrim(s1, set));
 }
-*/
+ */
