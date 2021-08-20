@@ -15,8 +15,10 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	size_t	j;
 
 	i = ft_strlen(s);
+	j = ft_strlen(s);
 	if (*(s + i) == (unsigned char)c)
 		return ((char *)s + i);
 	i--;
@@ -26,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + i);
 		i--;
 	}
-	return (ft_strdup(""));
+	return ((char *)s + j);
 }
 /* 
 int main(void)
@@ -36,5 +38,4 @@ int main(void)
     printf("%s\n",ft_strrchr(str2, c));
     printf("%s\n",strrchr(str2, c));
     return 0;
-}
- */
+} */
