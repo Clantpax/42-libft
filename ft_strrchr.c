@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	if (*(s + i) == (unsigned char)c)
 		return ((char *)s + i);
 	i--;
-	while (*(s + i) != 0 && i != -1)
+	while (*(s + i) != 0 && (int)i > -1)
 	{
 		if (*(s + i) == (unsigned char)c)
 			return ((char *)s + i);
