@@ -59,7 +59,7 @@ char	**ft_split(char const *s, char c)
 	str[k] = 0;
 	return (str);
 }
-
+/*
 int main()
 {
     char **res = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
@@ -68,3 +68,4 @@ int main()
         printf("%s\n", res[i++]);
     return (0);
 }
+*/
